@@ -6,18 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <span>Tareas</span>
+        <div>
+            <span class="texto">Tareas</span>
+            <span id="tareas"></span>
+        </div>
         <span>Mi To Do List</span>
     </header>
+    <div class= "formato">
+        <h3>Vista</h3>
+        <div class="lista">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="cuadricula">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <div class="container">
         <aside class="aside" id="aside">
             <h3>Agregar Tareas</h3>
-            <h4>Titulo de tarea</h4>
+            <h4>Titulo</h4>
             <input type="text" id="titulo" placeholder="Ingresa un titulo">
-            <h4>Descripción tarea</h4>
+            <h4>Descripción</h4>
             <input type="text" id="parrafo" placeholder="Ingresa una descipción">
             <button id="btnAgregar">Agregar</button>
         </aside>

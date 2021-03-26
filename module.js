@@ -3,6 +3,9 @@ let titulo = document.getElementById('titulo');
 let parrafo = document.getElementById('parrafo');
 let btnAgregar = document.getElementById('btnAgregar').addEventListener('click', validarTexto)
 let btnBorrar = document.getElementById('btnBorrar').addEventListener('click', eliminarTarea)
+let numTareas = document.getElementById('tareas')
+
+
 function validarTexto(){
     if(titulo.value === "" || parrafo.value === ""){
         alert('Ingresa un contenido en todos los campos')
@@ -31,15 +34,21 @@ function agregarTarea(){
     section.appendChild(nuevaTarea)
 
     nuevaTarea.classList.add('target')
-
-    for(i=0; i <= section.children.length-1;i++){
-        section.children[i].children[2].addEventListener('click', eliminarTarea)
-    }
-
-    titulo.value = "";
-    parrafo.value = "";
+    agregarEscuchador()
+    reiniciarInput()
+    numTareas.innerHTML = section.children.length
 }
 
 function eliminarTarea(){
     this.parentNode.remove(this.parentNode)
+    numTareas.innerHTML = section.children.length
+}
+function reiniciarInput(){
+    titulo.value = "";
+    parrafo.value = "";
+}
+function agregarEscuchador(){
+    for(i=0; i <= section.children.length-1;i++){
+        section.children[i].children[2].addEventListener('click', eliminarTarea)
+    }
 }

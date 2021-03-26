@@ -7,14 +7,14 @@
     display: flex;
     background: linear-gradient(180deg,#7164e6, #9198e5);
     min-height: 500px;
+    font-family:'Dela Gothic One', cursive;
 }
 .target{
     background-color: blue;
     width: 200px;
     padding: 10px 15px;
     margin: 20px;
-    max-height: 100px;
-    overflow: hidden;
+    border-radius: 20px;
 }
 .header{
     height: 50px;
@@ -22,22 +22,89 @@
     display: flex;
     justify-content: space-between;
     background-color: cornflowerblue;
+    font-family:'Dela Gothic One', cursive;
+    align-items: center;
+    padding-right: 30px;
+}
+.header .texto{
+margin: 0 15px;
+}
+.formato{
+    display: flex;
+    justify-content: flex-end;
+    background: cornflowerblue;
+    font-family:'Dela Gothic One', cursive;
+    align-items: center;
+    padding: 0 30px 10px 0;
+}
+.formato h3{
+    margin-right: 20px;
+}
+.lista{
+    height: 50px;
+    width: 50px;
+    background: white;
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
+    padding: 3px 0 ;
+    border-radius: 5px;
+}
+.lista div{
+    height: 10px;
+    width: 90%;
+    margin: 3px 3px;
+    background: darkblue;
+    border-radius: 4px;
+}
+.cuadricula{
+    height: 50px;
+    width: 50px;
+    background: white;
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+.cuadricula div{
+    width: 20px;
+    height: 20px;
+    background: darkblue;
+    border-radius: 5px;
 }
 .aside{
     width: 30%;
     border: 3px dashed black;
     margin: 50px 0 0 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .aside h3{
 margin: 10px 0 ;
-font-size: 30px;
+font-size: 25px;
+}
+.aside h4{
+    font-size: 20px;
 }
 .aside input{
     height: 40px;
+    width: 70%;
     border-radius: 10px;
     border: none;
-    margin: 20px 0 ;
+    margin: 20px 0;
+    outline: none;
+    padding-left: 15px;
+}
+.aside button{
+    display: block;
+    height: 40px;
+    width: 70px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
 }
 .section{
     width: 70%;
