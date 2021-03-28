@@ -4,7 +4,9 @@ let parrafo = document.getElementById('parrafo');
 let btnAgregar = document.getElementById('btnAgregar').addEventListener('click', validarTexto)
 let btnBorrar = document.getElementById('btnBorrar').addEventListener('click', eliminarTarea)
 let numTareas = document.getElementById('tareas')
-
+let lista = document.getElementById('lista').addEventListener('click', cambiarFormato)
+let cuadricula = document.getElementById('cuadricula').addEventListener('click', cambiarFormato)
+let formatoActual = "target_list"
 
 function validarTexto(){
     if(titulo.value === "" || parrafo.value === ""){
@@ -33,7 +35,7 @@ function agregarTarea(){
     nuevaTarea.appendChild(nuevoBtnBorrar)
     section.appendChild(nuevaTarea)
 
-    nuevaTarea.classList.add('target')
+    nuevaTarea.classList.add(formatoActual)
     agregarEscuchador()
     reiniciarInput()
     numTareas.innerHTML = section.children.length
@@ -50,5 +52,20 @@ function reiniciarInput(){
 function agregarEscuchador(){
     for(i=0; i <= section.children.length-1;i++){
         section.children[i].children[2].addEventListener('click', eliminarTarea)
+    }
+}
+function cambiarFormato(){
+    for (i = 0; i < this.parentNode.children.length;i++){
+        this.parentNode.children[i].classList.remove('seleccionado')
+    }
+    this.classList.add('seleccionado')
+
+    if(this.id === "lista"){
+        formatoActual = "target_list" 
+    }else{
+        formatoActual = "target"
+    }
+    for(i=0; i< section.children.length; i++){
+        section.children[i].className= formatoActual
     }
 }
